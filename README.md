@@ -10,4 +10,4 @@ Pick the Dialog component in the sidebar to view the component.
 
 The page will reload when you make changes.
 
-See the most commonly used dialog variant on [GitHub Pages]()
+See the most commonly used dialog variant on [GitHub Pages](https://said-fd.github.io/react-dialog)
