@@ -26,6 +26,7 @@
     "react",
     "dialog",
     "modal",
+    "focus-trap",
     "react-dialog",
     "react-modal",
     "react dialog",

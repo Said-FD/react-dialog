@@ -13,7 +13,6 @@
 /build
 /public
 /.cache
-/storybook-static
 
 # misc
 .DS_Store

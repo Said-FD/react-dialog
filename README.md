@@ -9,3 +9,5 @@ The application will run in your browser at [http://localhost:6006](http://local
 Pick the Dialog component in the sidebar to view the component.
 
 The page will reload when you make changes.
+
+See the most commonly used dialog variant on [GitHub Pages]()

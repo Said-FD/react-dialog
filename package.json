@@ -18,7 +18,7 @@
     "dist": "rollup -c"
   },
   "dependencies": {
-    "@feeng/react-dialog": "^0.0.6"
+    "@feeng/react-dialog": "^0.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
@@ -26,12 +26,6 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-interactions": "^7.5.3",
-    "@storybook/addon-links": "^7.5.3",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.5.3",
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { Dialog } from '@feeng/react-dialog';
-// import { Dialog } from '../component/Dialog/Dialog';
+// import { Dialog } from '@feeng/react-dialog';
+import { Dialog } from '../component/Dialog/Dialog';
 
 export default {
   title: 'Dialog',
@@ -162,7 +162,7 @@ const DialogWithHooks = () => {
         isDialogOpen={isSimpleDialogOpen}
         setIsDialogOpen={setIsSimpleDialogOpen}
       >
-        <p>Some dialog content</p>
+        <p>Bye React Portal :Ь</p>
       </Dialog>
     </>
   );
