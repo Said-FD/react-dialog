@@ -1,0 +1,207 @@
+/* 
+  To customize `dialog::backdrop` color specify this variable declaration with desired color
+  in the global CSS or parent component CSS
+
+  ::backdrop {
+    --dialogBackdropColor: rgba(0,0,0,.32);
+  }
+
+  0.32 - default light theme opacity
+  0.48 - default dark theme opacity
+*/
+
+.light {
+  color-scheme: light;
+  --surfaceColorScheme: var(--surfaceColor, #fff);
+  --onSurfaceColorScheme: var(--onSurfaceColor, #141414);
+  --closeButtonColorScheme: #3d3d3d;
+  --closeButtonHoverColorScheme: #f5f5f5;
+  --closeButtonActiveColorScheme: #ebebeb;
+  --confirmButtonColorScheme: var(--surfaceColor, #fff);
+  --confirmButtonBgColorScheme: var(--onSurfaceColor, #141414);
+  --confirmButtonHoverBgColorScheme: #3a3a3a;
+  --confirmButtonActiveBgColorScheme: var(--onSurfaceColor, #141414);
+  --cancelButtonColorScheme: var(--onSurfaceColor, #141414);
+  --cancelButtonBgColorScheme: #f5f5f5;
+  --cancelButtonHoverBgColorScheme: #ebebeb;
+  --cancelButtonActiveBgColorScheme: #e0e0e0;
+}
+
+.light::backdrop {
+  --overlayScheme: var(--dialogBackdropColor, rgba(0, 0, 0, .32));
+}
+
+.dark {
+  color-scheme: dark;
+  --surfaceColorScheme: var(--surfaceColor, #292929);
+  --onSurfaceColorScheme: var(--onSurfaceColor, #e0e0e0);
+  --closeButtonColorScheme: #d6d6d6;
+  --closeButtonHoverColorScheme: #3a3a3a;
+  --closeButtonActiveColorScheme: #141414;
+  --confirmButtonColorScheme: #141414;
+  --confirmButtonBgColorScheme: #f5f5f5;
+  --confirmButtonHoverBgColorScheme: #ebebeb;
+  --confirmButtonActiveBgColorScheme: var(--onSurfaceColor, #e0e0e0);
+  --cancelButtonColorScheme: var(--onSurfaceColor, #e0e0e0);
+  --cancelButtonBgColorScheme: #1f1f1f;
+  --cancelButtonHoverBgColorScheme: #3a3a3a;
+  --cancelButtonActiveBgColorScheme: #141414;
+}
+
+.dark::backdrop {
+  --overlayScheme: var(--dialogBackdropColor, rgba(0, 0, 0, .48));
+}
+
+.dialog,
+.dialog *,
+.dialog::before,
+.dialog::after,
+.dialog ::before,
+.dialog ::after {
+  box-sizing: border-box;
+}
+
+.dialog {
+  min-width: var(--minWidth, 320px);
+  width: var(--width, 380px);
+  max-width: var(--maxWidth, 95dvw);
+  padding: 0;
+  font-family: var(--fontFamily, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif);
+  color: var(--onSurfaceColorScheme);
+  background-color: var(--surfaceColorScheme);
+  border: var(--border);
+  border-radius: var(--borderRadius, 8px);
+  outline: var(--outline);
+  box-shadow: var(--boxShadow);
+}
+
+.dialog::backdrop {
+  background-color: var(--overlayScheme);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: var(--minHeight);
+  height: var(--height, auto);
+  max-height: var(--maxHeight);
+  padding: var(--padding, 1rem);
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.title {
+  margin: 0;
+  padding-block-end: 1rem;
+  text-wrap: balance;
+  font-size: var(--titleFontSize, 1.125rem);
+  font-weight: var(--titleFontWeight, 700);
+  font-style: var(--titleFontStyle, normal);
+  line-height: var(--titleLineHeight, 1.33);
+}
+
+.closeButton {
+  position: relative;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: auto;
+  padding: .5rem;
+  color: var(--closeButtonColorScheme);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--closeButtonBorderRadius, 4px);
+  cursor: pointer;
+  transition:
+    color .15s, background-color .15s,
+    border-color .15s, outline-color .15s, box-shadow .15s;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  background-color: var(--closeButtonHoverColorScheme);
+}
+
+.closeButton:active {
+  background-color: var(--closeButtonActiveColorScheme);
+}
+
+.body {
+  padding-block-end: 1rem;
+}
+
+.dialog p {
+  margin-block: 0;
+  font-weight: var(--paragraphFontWeight, 500);
+  line-height: var(--paragraphLineHeight, 1.5);
+}
+
+.footer {
+  display: flex;
+  flex-direction: var(--footerDirection, row);
+  justify-content: var(--buttonsAlign, flex-end);
+  gap: .5rem;
+  margin-block-start: auto;
+  padding-block-start: 1rem;
+}
+
+.footer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 1rem;
+  font-family: inherit;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: var(--actionButtonLineHeight, 1.71);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    color .15s, background-color .15s,
+    border-color .15s, outline-color .15s, box-shadow .15s;
+}
+
+.footer button:disabled {
+  pointer-events: none;
+  opacity: .32;
+}
+
+.footerStretch button {
+  flex: 1;
+}
+
+.confirmButton {
+  color: var(--confirmButtonColorScheme);
+  background-color: var(--confirmButtonBgColorScheme);
+}
+
+.confirmButton:hover,
+.confirmButton:focus-visible {
+  background-color: var(--confirmButtonHoverBgColorScheme);
+}
+
+.confirmButton:active {
+  background-color: var(--confirmButtonActiveBgColorScheme);
+}
+
+.cancelButton {
+  color: var(--cancelButtonColorScheme);
+  background-color: var(--cancelButtonBgColorScheme);
+}
+
+.cancelButton:hover,
+.cancelButton:focus-visible {
+  background-color: var(--cancelButtonHoverBgColorScheme);
+}
+
+.cancelButton:active {
+  background-color: var(--cancelButtonActiveBgColorScheme);
+}

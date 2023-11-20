@@ -1,0 +1,60 @@
+{
+  "name": "@feeng/react-dialog",
+  "version": "0.0.1",
+  "description": "Native HTML dialog as an accessible React component. Playground",
+  "main": "dist/react-dialog.cjs.js",
+  "module": "dist/react-dialog.esm.js",
+  "author": "frontendmax",
+  "person": {
+    "name": "Max Konoval",
+    "url": "https://linkedin.com/in/frontendmax"
+  },
+  "homepage": "https://github.com/Said-FD/react-dialog",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "dist": "rollup -c"
+  },
+  "dependencies": {
+    "@feeng/react-dialog": "^0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-vite": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.5.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.5.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "keywords": [
+    "dialog",
+    "modal",
+    "dialog component",
+    "modal component",
+    "react dialog",
+    "react modal",
+    "react"
+  ],
+  "type": "module"
+}
