@@ -23,21 +23,23 @@
     "dist"
   ],
   "keywords": [
-    "react",
-    "dialog",
-    "modal",
+    "native html dialog",
+    "vanilla html dialog",
     "focus-trap",
-    "react-dialog",
-    "react-modal",
     "react dialog",
     "react a11y dialog",
     "react modal",
+    "react-dialog",
+    "react-modal",
+    "a11y dialog",
     "dialog component",
     "dialog element",
     "modal component",
     "modal window",
     "accessible dialog",
-    "a11y dialog"
+    "react",
+    "dialog",
+    "modal"
   ],
   "exports": {
     "require": "./dist/react-dialog.cjs.js",

@@ -6,8 +6,8 @@ export const Dialog = ({
   isDialogOpen,
   setIsDialogOpen,
   children,
-  theme = 'light',
-  additionalClassNames,
+  theme = 'light', // -
+  additionalClassNames, // -
   title,
   showCloseButton = true,
   confirmButtonText,
@@ -16,48 +16,48 @@ export const Dialog = ({
   cancelButtonAction,
   isConfirmButtonDisabled = false,
   isCancelButtonDisabled = false,
-  minWidth,
-  width,
-  maxWidth,
-  minHeight,
-  height,
-  maxHeight,
-  padding,
-  fontFamily,
-  surfaceColor,
-  onSurfaceColor,
-  border,
-  borderRadius,
-  outline,
-  boxShadow,
-  titleFontSize,
-  titleFontWeight,
-  titleFontStyle,
-  titleLineHeight,
-  dialogStyles,
-  headerStyles,
-  bodyStyles,
-  footerStyles,
-  footerDirection,
-  buttonsAlign,
-  buttonsStyles,
-  buttonsHoverStyles,
-  buttonsActiveStyles,
-  confirmButtonStyles,
-  confirmButtonHoverStyles,
-  confirmButtonActiveStyles,
+  minWidth, // -
+  width, // -
+  maxWidth, // -
+  minHeight, // -
+  height, // -
+  maxHeight, // -
+  padding, // -
+  fontFamily, // -
+  surfaceColor, // -
+  onSurfaceColor, // -
+  border, // -
+  borderRadius, // -
+  outline, // -
+  boxShadow, // -
+  titleFontSize, // -
+  titleFontWeight, // -
+  titleFontStyle, // -
+  titleLineHeight, // -
+  dialogStyles, // -
+  headerStyles, // -
+  bodyStyles, // -
+  footerStyles, // -
+  footerDirection, // -
+  buttonsAlign, // -
+  buttonsStyles, // -
+  buttonsHoverStyles, // -
+  buttonsActiveStyles, // -
+  confirmButtonStyles, // -
+  confirmButtonHoverStyles, // -
+  confirmButtonActiveStyles, // -
   confirmButtonAriaLabel,
-  confirmButtonOrder,
-  cancelButtonStyles,
-  cancelButtonHoverStyles,
-  cancelButtonActiveStyles,
+  confirmButtonOrder, // -
+  cancelButtonStyles, // -
+  cancelButtonHoverStyles, // -
+  cancelButtonActiveStyles, // -
   cancelButtonAriaLabel,
-  cancelButtonOrder,
-  closeButtonStyles,
-  closeButtonHoverStyles,
-  closeButtonActiveStyles,
+  cancelButtonOrder, // -
+  closeButtonStyles, // -
+  closeButtonHoverStyles, // -
+  closeButtonActiveStyles, // -
   closeButtonIcon,
-  closeButtonIconStyles,
+  closeButtonIconStyles, // -
   closeButtonAriaLabel = 'close dialog',
   additionalFooterButtons,
 }) => {
