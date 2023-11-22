@@ -47,14 +47,14 @@ Property name       | Description               | Type                          
 **isDialogOpen**    | Dialog visibility         | `boolean`                                | None
 **setIsDialogOpen** | Handles dialog visibility | `(arg: SetStateAction<boolean>) => void` | None
 
-Just pass any `children` like in the example above and you are good to go with the simplest variant (potentially enough for alert and annoying notifications).
+<br>Just pass any `children` like in the example above and you are good to go with the simplest variant (potentially enough for alert and annoying notifications).
 
-You can pass content as a `children` and have a separate dialog **title**:
+You can pass content as a `children` and have a separate dialog **title** simultaneously:
 Property name | Description                      | Type                  | Default value
 --------------|----------------------------------|-----------------------|--------------
 **title**     | Renders at the top of the dialog | `string \| ReactNode` | None
 
-If initial styling is fit your needs you can keep everything like it is and switch `light` and `dark` color themes with `theme` property.\
+<br>If initial styling is fit your needs you can keep everything like it is and switch `light` and `dark` color themes with `theme` property.\
 Default color palette is neutral and could look nice for different cases.
 
 By default there is only one control is present - close X-button.\
@@ -78,16 +78,16 @@ Property name               | Description                         | Type        
 **cancelButtonAriaLabel**   | Handy if button content has no text | `string`              | None
 **closeButtonAriaLabel**    | Handy if button content has no text | `string`              | `close dialog`
 
-If these controls are not enough you can add your own into the same dialog footer space.\
+<br>If these controls are not enough you can add your own into the same dialog footer space.\
 Additional stuff will be rendered to the left of the predefined buttons.\
-Just remember to `setIsDialogOpen(false)` (in most cases) if you passing the button `:)`
+Just remember to `setIsDialogOpen(false)` (in most cases) if you passing your own button `:)`
 
 #### Additional footer elements:
 Property name               | Description                            | Type        | Default value
 ----------------------------|----------------------------------------|-------------|--------------
 **additionalFooterButtons** | Adds anything you want into the footer | `ReactNode` | None
 
-**Buttons alignment** is also customizable:
+<br>**Buttons alignment** is also customizable:
 Property name          | Description                              | Type     | Default value
 -----------------------|------------------------------------------|----------|--------------
 **footerDirection**    | Accepts all `flex-direction` CSS values  | `string` | `row`
@@ -95,12 +95,13 @@ Property name          | Description                              | Type     | D
 **confirmButtonOrder** | Literally, flex `order` value            | `number` | DOM order, after "cancel" button
 **cancelButtonOrder**  | Literally, flex `order` value            | `number` | DOM order, before "confirm" button
 
-Footer `align-items` value defaults to `stretch`, you could change it passing a CSS rule to the `footerStyles` object but we'll get to it a bit later.
+<br>Footer `align-items` value defaults to `stretch`, you could change it passing a CSS rule to the `footerStyles` object but we'll get to it a bit later.
 
 If you don't like how dialog looks by default it's not a problem.\
 Let's get to the styling now.
 
-First set of properties doesn't actually override anything as it utilizing CSS Custom Properties.\
+First set of properties doesn't actually override anything as it utilizing CSS Custom Properties.
+
 #### CSS vars rule set:
 Property name   | Description   | Type     | Default value
 ----------------|---------------|----------|--------------
@@ -109,9 +110,9 @@ Property name   | Description   | Type     | Default value
 **maxWidth**        | `max-width`   | `string` | `95dvw`
 **minHeight**       | `min-height`  | `string` | None
 **height**          | `height`      | `string` | `auto`
-**maxHeight**       | `max-height` <br> I don't recommend to use this one <br> Browser handles it perfectly by its own | `string` | None
+**maxHeight**       | `max-height` <br> I don't recommend to use this one. <br> Browser handles it perfectly by its own | `string` | None
 **padding**         | `padding` in any shorthand format      | `string` | `1rem`
-**fontFamily**      | `font-family` | `string` | `-apple-system, BlinkMacSystemFont,` <br> `'Segoe UI', Roboto, Ubuntu,` <br> `'Helvetica Neue', sans-serif`
+**fontFamily**      | `font-family` | `string` | `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif`
 **surfaceColor**    | `background-color` in any color format | `string` | Light theme: `#fff` <br> Dark theme: `#292929`
 **onSurfaceColor**  | `color` in any color format            | `string` | Light theme: `#141414` <br> Dark theme: `#e0e0e0`
 **border**          | `border` in any shorthand format       | `string` | `none`
@@ -123,7 +124,8 @@ Property name   | Description   | Type     | Default value
 **titleFontStyle**  | Title `font-style` any existing value  | `string` | `normal`
 **titleLineHeight** | Title `line-height` in any units       | `string` | `1.33`
 
-To switch between the two color themes just change a `theme` value.
+<br>To switch between the two color themes just change a `theme` value.
+
 #### Theming:
 Property name     | Description                     | Type     | Default value
 ------------------|---------------------------------|----------|--------------
