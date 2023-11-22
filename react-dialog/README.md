@@ -42,17 +42,17 @@ const MyComponent = () => {
 ```
 
 #### Component has only two required properties:
-Property name   | Description               | Type                                     | Default value
-----------------|---------------------------|------------------------------------------|--------------
-isDialogOpen    | Dialog visibility         | `boolean`                                | None
-setIsDialogOpen | Handles dialog visibility | `(arg: SetStateAction<boolean>) => void` | None
+Property name       | Description               | Type                                     | Default value
+--------------------|---------------------------|------------------------------------------|--------------
+**isDialogOpen**    | Dialog visibility         | `boolean`                                | None
+**setIsDialogOpen** | Handles dialog visibility | `(arg: SetStateAction<boolean>) => void` | None
 
 Just pass any `children` like in the example above and you are good to go with the simplest variant (potentially enough for alert and annoying notifications).
 
 You can pass content as a `children` and have a separate dialog **title**:
 Property name | Description                      | Type                  | Default value
 --------------|----------------------------------|-----------------------|--------------
-title         | Renders at the top of the dialog | `string \| ReactNode` | None
+**title**     | Renders at the top of the dialog | `string \| ReactNode` | None
 
 If initial styling is fit your needs you can keep everything like it is and switch `light` and `dark` color themes with `theme` property.\
 Default color palette is neutral and could look nice for different cases.
@@ -64,36 +64,36 @@ Don't worry about semantics and a11y of the predefined elements, markup built fr
 All predefined buttons handles dialog close by default, and you can add your own handlers for "confirm" and/or "cancel" buttons.
 
 #### Predefined optional controls:
-Property name           | Description                         | Type                  | Default value
-------------------------|-------------------------------------|-----------------------|--------------
-showCloseButton         | Close X-button visibility           | `boolean`             | `true`
-closeButtonIcon         | Close X-button content              | `string \| ReactNode` | X-icon svg
-confirmButtonText       | Button visibility and content       | `string \| ReactNode` | None
-cancelButtonText        | Button visibility and content       | `string \| ReactNode` | None
-confirmButtonAction     | Handles button `onClick` action     | `() => void`          | None
-cancelButtonAction      | Handles button `onClick` action     | `() => void`          | None
-isConfirmButtonDisabled | Disables the button                 | `boolean`             | `false`
-isCancelButtonDisabled  | Disables the button                 | `boolean`             | `false`
-confirmButtonAriaLabel  | Handy if button content has no text | `string`              | None
-cancelButtonAriaLabel   | Handy if button content has no text | `string`              | None
-closeButtonAriaLabel    | Handy if button content has no text | `string`              | `close dialog`
+Property name               | Description                         | Type                  | Default value
+----------------------------|-------------------------------------|-----------------------|--------------
+**showCloseButton**         | Close X-button visibility           | `boolean`             | `true`
+**closeButtonIcon**         | Close X-button content              | `string \| ReactNode` | X-icon svg
+**confirmButtonText**       | Button visibility and content       | `string \| ReactNode` | None
+**cancelButtonText**        | Button visibility and content       | `string \| ReactNode` | None
+**confirmButtonAction**     | Handles button `onClick` action     | `() => void`          | None
+**cancelButtonAction**      | Handles button `onClick` action     | `() => void`          | None
+**isConfirmButtonDisabled** | Disables the button                 | `boolean`             | `false`
+**isCancelButtonDisabled**  | Disables the button                 | `boolean`             | `false`
+**confirmButtonAriaLabel**  | Handy if button content has no text | `string`              | None
+**cancelButtonAriaLabel**   | Handy if button content has no text | `string`              | None
+**closeButtonAriaLabel**    | Handy if button content has no text | `string`              | `close dialog`
 
 If these controls are not enough you can add your own into the same dialog footer space.\
 Additional stuff will be rendered to the left of the predefined buttons.\
 Just remember to `setIsDialogOpen(false)` (in most cases) if you passing the button `:)`
 
 #### Additional footer elements:
-Property name           | Description                            | Type        | Default value
-------------------------|----------------------------------------|-------------|--------------
-additionalFooterButtons | Adds anything you want into the footer | `ReactNode` | None
+Property name               | Description                            | Type        | Default value
+----------------------------|----------------------------------------|-------------|--------------
+**additionalFooterButtons** | Adds anything you want into the footer | `ReactNode` | None
 
 **Buttons alignment** is also customizable:
-Property name      | Description                              | Type     | Default value
--------------------|------------------------------------------|----------|--------------
-footerDirection    | Accepts all `flex-direction` CSS values  | `string` | `row`
-buttonsAlign       | Accepts all `justify-content` CSS values | `string` | `flex-end`
-confirmButtonOrder | Literally, flex `order` value            | `number` | DOM order, after "cancel" button
-cancelButtonOrder  | Literally, flex `order` value            | `number` | DOM order, before "confirm" button
+Property name          | Description                              | Type     | Default value
+-----------------------|------------------------------------------|----------|--------------
+**footerDirection**    | Accepts all `flex-direction` CSS values  | `string` | `row`
+**buttonsAlign**       | Accepts all `justify-content` CSS values | `string` | `flex-end`
+**confirmButtonOrder** | Literally, flex `order` value            | `number` | DOM order, after "cancel" button
+**cancelButtonOrder**  | Literally, flex `order` value            | `number` | DOM order, before "confirm" button
 
 Footer `align-items` value defaults to `stretch`, you could change it passing a CSS rule to the `footerStyles` object but we'll get to it a bit later.
 
@@ -104,30 +104,30 @@ First set of properties doesn't actually override anything as it utilizing CSS C
 #### CSS vars rule set:
 Property name   | Description   | Type     | Default value
 ----------------|---------------|----------|--------------
-minWidth        | `min-width`   | `string` | `320px`
-width           | `width`       | `string` | `380px`
-maxWidth        | `max-width`   | `string` | `95dvw`
-minHeight       | `min-height`  | `string` | None
-height          | `height`      | `string` | `auto`
-maxHeight       | `max-height` <br> I don't recommend to use this one <br> Browser handles it perfectly by its own | `string` | None
-padding         | `padding` in any shorthand format      | `string` | `1rem`
-fontFamily      | `font-family` | `string` | `-apple-system, BlinkMacSystemFont,` <br> `'Segoe UI', Roboto, Ubuntu,` <br> `'Helvetica Neue', sans-serif`
-surfaceColor    | `background-color` in any color format | `string` | Light theme: `#fff` <br> Dark theme: `#292929`
-onSurfaceColor  | `color` in any color format            | `string` | Light theme: `#141414` <br> Dark theme: `#e0e0e0`
-border          | `border` in any shorthand format       | `string` | `none`
-borderRadius    | `border-radius` in any units           | `string` | `8px`
-outline         | `outline` in any shorthand format      | `string` | None
-boxShadow       | `box-shadow` in any format             | `string` | None
-titleFontSize   | Title `font-size` in any units         | `string` | `1.125rem`
-titleFontWeight | Title `font-weight`in any format       | `string` | `700`
-titleFontStyle  | Title `font-style` any existing value  | `string` | `normal`
-titleLineHeight | Title `line-height` in any units       | `string` | `1.33`
+**minWidth**        | `min-width`   | `string` | `320px`
+**width**           | `width`       | `string` | `380px`
+**maxWidth**        | `max-width`   | `string` | `95dvw`
+**minHeight**       | `min-height`  | `string` | None
+**height**          | `height`      | `string` | `auto`
+**maxHeight**       | `max-height` <br> I don't recommend to use this one <br> Browser handles it perfectly by its own | `string` | None
+**padding**         | `padding` in any shorthand format      | `string` | `1rem`
+**fontFamily**      | `font-family` | `string` | `-apple-system, BlinkMacSystemFont,` <br> `'Segoe UI', Roboto, Ubuntu,` <br> `'Helvetica Neue', sans-serif`
+**surfaceColor**    | `background-color` in any color format | `string` | Light theme: `#fff` <br> Dark theme: `#292929`
+**onSurfaceColor**  | `color` in any color format            | `string` | Light theme: `#141414` <br> Dark theme: `#e0e0e0`
+**border**          | `border` in any shorthand format       | `string` | `none`
+**borderRadius**    | `border-radius` in any units           | `string` | `8px`
+**outline**         | `outline` in any shorthand format      | `string` | None
+**boxShadow**       | `box-shadow` in any format             | `string` | None
+**titleFontSize**   | Title `font-size` in any units         | `string` | `1.125rem`
+**titleFontWeight** | Title `font-weight`in any format       | `string` | `700`
+**titleFontStyle**  | Title `font-style` any existing value  | `string` | `normal`
+**titleLineHeight** | Title `line-height` in any units       | `string` | `1.33`
 
 To switch between the two color themes just change a `theme` value.
 #### Theming:
-Property name | Description                     | Type     | Default value
---------------|---------------------------------|----------|--------------
-theme         | Could be `light` or `dark` only | `string` | `light`
+Property name     | Description                     | Type     | Default value
+------------------|---------------------------------|----------|--------------
+**theme**         | Could be `light` or `dark` only | `string` | `light`
 
 <br>
 <br>
