@@ -6,7 +6,7 @@ export const Dialog = ({
   isDialogOpen,
   setIsDialogOpen,
   children,
-  theme = 'light', // -
+  theme = 'light',
   additionalClassNames, // -
   title,
   showCloseButton = true,
@@ -16,30 +16,30 @@ export const Dialog = ({
   cancelButtonAction,
   isConfirmButtonDisabled = false,
   isCancelButtonDisabled = false,
-  minWidth, // -
-  width, // -
-  maxWidth, // -
-  minHeight, // -
-  height, // -
-  maxHeight, // -
-  padding, // -
-  fontFamily, // -
-  surfaceColor, // -
-  onSurfaceColor, // -
-  border, // -
-  borderRadius, // -
-  outline, // -
-  boxShadow, // -
-  titleFontSize, // -
-  titleFontWeight, // -
-  titleFontStyle, // -
-  titleLineHeight, // -
+  minWidth,
+  width,
+  maxWidth,
+  minHeight,
+  height,
+  maxHeight,
+  padding,
+  fontFamily,
+  surfaceColor,
+  onSurfaceColor,
+  border,
+  borderRadius,
+  outline,
+  boxShadow,
+  titleFontSize,
+  titleFontWeight,
+  titleFontStyle,
+  titleLineHeight,
   dialogStyles, // -
   headerStyles, // -
   bodyStyles, // -
   footerStyles, // -
-  footerDirection, // -
-  buttonsAlign, // -
+  footerDirection,
+  buttonsAlign,
   buttonsStyles, // -
   buttonsHoverStyles, // -
   buttonsActiveStyles, // -
@@ -47,12 +47,12 @@ export const Dialog = ({
   confirmButtonHoverStyles, // -
   confirmButtonActiveStyles, // -
   confirmButtonAriaLabel,
-  confirmButtonOrder, // -
+  confirmButtonOrder,
   cancelButtonStyles, // -
   cancelButtonHoverStyles, // -
   cancelButtonActiveStyles, // -
   cancelButtonAriaLabel,
-  cancelButtonOrder, // -
+  cancelButtonOrder,
   closeButtonStyles, // -
   closeButtonHoverStyles, // -
   closeButtonActiveStyles, // -
