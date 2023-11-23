@@ -7,7 +7,7 @@ export const Dialog = ({
   setIsDialogOpen,
   children,
   theme = 'light',
-  additionalClassNames, // -
+  additionalClassNames,
   title,
   showCloseButton = true,
   confirmButtonText,
@@ -34,30 +34,30 @@ export const Dialog = ({
   titleFontWeight,
   titleFontStyle,
   titleLineHeight,
-  dialogStyles, // -
-  headerStyles, // -
-  bodyStyles, // -
-  footerStyles, // -
+  dialogStyles,
+  headerStyles,
+  bodyStyles,
+  footerStyles,
   footerDirection,
   buttonsAlign,
-  buttonsStyles, // -
-  buttonsHoverStyles, // -
-  buttonsActiveStyles, // -
-  confirmButtonStyles, // -
-  confirmButtonHoverStyles, // -
-  confirmButtonActiveStyles, // -
+  buttonsStyles,
+  buttonsHoverStyles,
+  buttonsActiveStyles,
+  confirmButtonStyles,
+  confirmButtonHoverStyles,
+  confirmButtonActiveStyles,
   confirmButtonAriaLabel,
   confirmButtonOrder,
-  cancelButtonStyles, // -
-  cancelButtonHoverStyles, // -
-  cancelButtonActiveStyles, // -
+  cancelButtonStyles,
+  cancelButtonHoverStyles,
+  cancelButtonActiveStyles,
   cancelButtonAriaLabel,
   cancelButtonOrder,
-  closeButtonStyles, // -
-  closeButtonHoverStyles, // -
-  closeButtonActiveStyles, // -
+  closeButtonStyles,
+  closeButtonHoverStyles,
+  closeButtonActiveStyles,
   closeButtonIcon,
-  closeButtonIconStyles, // -
+  closeButtonIconStyles,
   closeButtonAriaLabel = 'close dialog',
   additionalFooterButtons,
 }) => {
