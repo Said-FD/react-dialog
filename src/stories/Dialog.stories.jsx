@@ -26,11 +26,11 @@ const DialogWithHooks = () => {
   };
 
   const handleConfirmButton = () => {
-    document.body.style.background = 'lightblue';
+    document.body.style.background = '#e3faec';
   };
 
   const handleCancelButton = () => {
-    document.body.style.background = 'lightcoral';
+    document.body.style.background = '#ffecfb';
   };
 
   return (
