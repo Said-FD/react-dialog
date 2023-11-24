@@ -1,6 +1,6 @@
 {
   "name": "@feeng/react-dialog",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Native HTML dialog as an accessible React component",
   "main": "dist/react-dialog.cjs.js",
   "module": "dist/react-dialog.esm.js",

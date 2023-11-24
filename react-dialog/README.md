@@ -47,7 +47,7 @@ Property name       | Description               | Type
 **isDialogOpen**    | Dialog visibility flag    | `boolean`
 **setIsDialogOpen** | Handles dialog visibility | `(arg: SetStateAction<boolean>) => void`
 
-<br>Just pass any `children` like in the example above and you are good to go with the simplest variant (potentially enough for alert and annoying notifications).
+<br>Just pass any `children` like in the example above and you are good to go with the simplest variant (potentially enough for alert or annoying notifications).
 
 You can pass content as a `children` and have a separate dialog **title** simultaneously:
 Property name | Description                      | Type                  | Default value
@@ -90,12 +90,12 @@ Property name               | Description                            | Type     
 <br>Buttons appearance control is pretty easy.
 
 #### Buttons alignment:
-Property name          | Description                              | Type     | Default value
------------------------|------------------------------------------|----------|--------------
-**footerDirection**    | Accepts all `flex-direction` CSS values  | `string` | `row`
-**buttonsAlign**       | Accepts all `justify-content` CSS values | `string` | `flex-end`
-**confirmButtonOrder** | Literally, flex `order` value            | `number` | DOM order, after "cancel" button
-**cancelButtonOrder**  | Literally, flex `order` value            | `number` | DOM order, before "confirm" button
+Property name          | Description                             | Type     | Default value
+-----------------------|-----------------------------------------|----------|--------------
+**footerDirection**    | Accepts all `flex-direction` CSS values | `string` | `row`
+**buttonsAlign**       | Accepts `justify-content` CSS simplified names: `start`, `center`, `end`, `between`, `around`, `evenly`  | `string` | `end`
+**confirmButtonOrder** | Literally, flex `order` value           | `number` | DOM order, after "cancel" button
+**cancelButtonOrder**  | Literally, flex `order` value           | `number` | DOM order, before "confirm" button
 
 <br>Footer `align-items` value defaults to `stretch`, you could change it passing a CSS rule to the `footerStyles` object but we'll get to it a bit later.
 
