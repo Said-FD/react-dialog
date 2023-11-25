@@ -2,8 +2,8 @@
   "name": "@feeng/react-dialog",
   "version": "0.0.1",
   "description": "Native HTML dialog as an accessible React component. Playground",
-  "main": "dist/react-dialog.cjs.js",
-  "module": "dist/react-dialog.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "author": "frontendmax",
   "person": {
     "name": "Max Konoval",
@@ -14,27 +14,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "dist": "rollup -c"
+    "build": "storybook build"
   },
   "dependencies": {
-    "@feeng/react-dialog": "^0.0.8"
+    "@feeng/react-dialog": "^0.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.5.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.5.3"
   },
   "peerDependencies": {

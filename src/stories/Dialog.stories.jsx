@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-// import { Dialog } from '@feeng/react-dialog';
-import { Dialog } from '../component/Dialog/Dialog';
+import { Dialog } from '@feeng/react-dialog';
+// import { Dialog } from '../component/Dialog/Dialog';
 
 export default {
   title: 'Dialog',
