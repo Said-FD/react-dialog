@@ -1,19 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { IDialog, IStyle, IUserStylesMap } from './types';
 import { getFooterButtonsAlign, getButtonStyles, getStyleElementCSS } from './utils';
 import styles from './Dialog.module.css';
 
 export const Dialog = ({
   isDialogOpen,
   setIsDialogOpen,
+  escKeyAction,
+  closeButtonAction,
+  confirmButtonAction,
+  cancelButtonAction,
+  dialogCloseAction,
   children,
   theme = 'light',
-  additionalClassNames,
+  dialogClassNames,
+  innerClassNames,
+  headerClassNames,
+  titleClassNames,
+  closeButtonClassNames,
+  bodyClassNames,
+  footerClassNames,
+  confirmButtonClassNames,
+  cancelButtonClassNames,
   title,
   showCloseButton = true,
   confirmButtonText,
-  confirmButtonAction,
   cancelButtonText,
-  cancelButtonAction,
   isConfirmButtonDisabled = false,
   isCancelButtonDisabled = false,
   minWidth,
@@ -60,8 +72,8 @@ export const Dialog = ({
   closeButtonIconStyles,
   closeButtonAriaLabel = 'close dialog',
   additionalFooterButtons,
-}) => {
-  const dialogRef = useRef(null);
+}: IDialog) => {
+  const dialogRef = useRef < HTMLDialogElement | null > (null);
 
   useEffect(() => {
     if (dialogRef && isDialogOpen) dialogRef.current?.showModal();
@@ -80,21 +92,21 @@ export const Dialog = ({
     '--borderRadius': borderRadius,
     '--outline': outline,
     '--boxShadow': boxShadow,
-  };
+  } as IStyle;
 
-  const innerStyles = {
+  const innerUserStyles = {
     '--minHeight': minHeight,
     '--height': height,
     '--maxHeight': maxHeight,
     '--padding': padding,
-  };
+  } as IStyle;
 
-  const titleStyles = {
+  const titleUserStyles = {
     '--titleFontSize': titleFontSize,
     '--titleFontWeight': titleFontWeight,
     '--titleFontStyle': titleFontStyle,
     '--titleLineHeight': titleLineHeight,
-  };
+  } as IStyle;
 
   const footerButtonsAlign = getFooterButtonsAlign(buttonsAlign);
   const confirmActionButtonStyles = getButtonStyles(confirmButtonStyles, confirmButtonOrder);
@@ -108,13 +120,13 @@ export const Dialog = ({
     cancelButtonActiveStyles,
     closeButtonHoverStyles,
     closeButtonActiveStyles,
-  });
+  } as IUserStylesMap);
 
   const footerUserStyles = {
     ...footerButtonsAlign,
     ...footerStyles,
     '--footerDirection': footerDirection,
-  };
+  } as IStyle;
 
   const confirmButtonUserStyles = {
     ...buttonsStyles,
@@ -126,45 +138,70 @@ export const Dialog = ({
     ...cancelActionButtonStyles,
   };
 
-  const handleDialogClose = () => {
+  const handleCloseEvent = () => {
+    if (dialogCloseAction) dialogCloseAction();
+  };
+
+  const handleEscape = () => {
+    if (escKeyAction) escKeyAction();
+    setIsDialogOpen(false);
+  };
+
+  const handleClose = () => {
+    if (closeButtonAction) closeButtonAction();
     setIsDialogOpen(false);
   };
 
   const handleConfirm = () => {
     if (confirmButtonAction) confirmButtonAction();
-    handleDialogClose();
+    setIsDialogOpen(false);
   };
 
   const handleCancel = () => {
     if (cancelButtonAction) cancelButtonAction();
-    handleDialogClose();
+    setIsDialogOpen(false);
   };
 
   return (
     <dialog
       ref={dialogRef}
-      onCancel={handleDialogClose}
-      className={`${styles[theme]} ${styles.dialog}${additionalClassNames ? ` ${additionalClassNames}` : ''}`}
       style={dialogUserStyles}
+      onCancel={handleEscape}
+      onClose={handleCloseEvent}
+      className={`${styles[theme]} ${styles.dialog}${dialogClassNames
+        ? ` ${dialogClassNames}` : ''}`}
     >
       {styleElementCss && (
         <style>{styleElementCss}</style>
       )}
-      <div className={styles.inner} style={innerStyles}>
+      <div
+        style={innerUserStyles}
+        className={`${styles.inner}${innerClassNames
+          ? ` ${innerClassNames}` : ''}`}
+      >
         {(title || showCloseButton) && (
-          <header className={styles.header} style={headerStyles}>
+          <header
+            style={headerStyles}
+            className={`${styles.header}${headerClassNames
+              ? ` ${headerClassNames}` : ''}`}
+          >
             {title && (
-              <h1 className={styles.title} style={titleStyles}>
+              <h1
+                style={titleUserStyles}
+                className={`${styles.title}${titleClassNames
+                  ? ` ${titleClassNames}` : ''}`}
+              >
                 {title}
               </h1>
             )}
             {showCloseButton && (
               <button
                 type="button"
-                className={styles.closeButton}
-                onClick={handleDialogClose}
                 style={closeButtonStyles}
+                onClick={handleClose}
                 aria-label={closeButtonAriaLabel}
+                className={`${styles.closeButton}${closeButtonClassNames
+                  ? ` ${closeButtonClassNames}` : ''}`}
               >
                 {closeButtonIcon ? (
                   closeButtonIcon
@@ -178,28 +215,34 @@ export const Dialog = ({
           </header>
         )}
         {children && (
-          <div className={styles.body} style={bodyStyles}>
+          <div
+            style={bodyStyles}
+            className={`${styles.body}${bodyClassNames
+              ? ` ${bodyClassNames}` : ''}`}
+          >
             {children}
           </div>
         )}
         {(confirmButtonText || cancelButtonText || additionalFooterButtons) && (
           <footer
-            className={
-              buttonsAlign === 'stretch'
-                ? `${styles.footer} ${styles.footerStretch}`
-                : styles.footer
-            }
             style={footerUserStyles}
+            className={buttonsAlign === 'stretch'
+              ? `${styles.footer} ${styles.footerStretch}${footerClassNames
+                ? ` ${footerClassNames}` : ''}`
+              : `${styles.footer}${footerClassNames
+                ? ` ${footerClassNames}` : ''}`
+            }
           >
             {additionalFooterButtons && additionalFooterButtons}
             {cancelButtonText && (
               <button
                 type="button"
-                className={styles.cancelButton}
                 style={cancelButtonUserStyles}
                 onClick={handleCancel}
                 disabled={isCancelButtonDisabled}
                 aria-label={cancelButtonAriaLabel}
+                className={`${styles.cancelButton}${cancelButtonClassNames
+                  ? ` ${cancelButtonClassNames}` : ''}`}
               >
                 {cancelButtonText}
               </button>
@@ -207,11 +250,12 @@ export const Dialog = ({
             {confirmButtonText && (
               <button
                 type="button"
-                className={styles.confirmButton}
                 style={confirmButtonUserStyles}
                 onClick={handleConfirm}
                 disabled={isConfirmButtonDisabled}
                 aria-label={confirmButtonAriaLabel}
+                className={`${styles.confirmButton}${confirmButtonClassNames
+                  ? ` ${confirmButtonClassNames}` : ''}`}
               >
                 {confirmButtonText}
               </button>

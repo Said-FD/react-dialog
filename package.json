@@ -1,9 +1,9 @@
 {
   "name": "@feeng/react-dialog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Native HTML dialog as an accessible React component. Playground",
-  "main": "dist/react-dialog.cjs.js",
-  "module": "dist/react-dialog.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "author": "frontendmax",
   "person": {
     "name": "Max Konoval",
@@ -14,41 +14,48 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "dist": "rollup -c"
+    "build": "storybook build"
   },
   "dependencies": {
-    "@feeng/react-dialog": "^0.0.8"
+    "@feeng/react-dialog": "^0.0.12",
+    "@types/jest": "^29.5.10",
+    "@types/node": "^20.10.0",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.3.0",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
+    "@types/css-modules": "^1.0.5",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "postcss": "^8.4.31",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.5.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "storybook": "^7.5.3"
+    "storybook": "^7.5.3",
+    "typescript": "^5.3.2"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "typescript": ">=3.7.0"
   },
-  "keywords": [
-    "dialog",
-    "modal",
-    "dialog component",
-    "modal component",
-    "react dialog",
-    "react modal",
-    "react"
-  ],
-  "type": "module"
+  "type": "module",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

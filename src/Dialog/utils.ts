@@ -1,4 +1,6 @@
-export const getFooterButtonsAlign = align => {
+import { IStyle, IStyleElementCSSMap, IUserStylesMap } from "./types";
+
+export const getFooterButtonsAlign = (align: string | undefined): IStyle => {
   if (!align) return {};
   if (align === 'center') return { '--buttonsAlign': align };
   if (align === 'start' || align === 'end') return { '--buttonsAlign': `flex-${align}` };
@@ -6,14 +8,14 @@ export const getFooterButtonsAlign = align => {
   return {};
 };
 
-export const getButtonStyles = (styles, order) => {
+export const getButtonStyles = (styles: IStyle | undefined, order: number | undefined): IStyle => {
   let buttonStyles = {};
   if (styles) buttonStyles = { ...styles };
   if (order) buttonStyles = { ...styles, order };
   return buttonStyles;
 };
 
-const convertToVanillaCSS = styles => {
+const convertToVanillaCSS = (styles: IStyle | undefined): string => {
   let values = '';
   if (!styles || Object.keys(styles).length === 0) return values;
   for (const [key, value] of Object.entries(styles)) {
@@ -22,7 +24,7 @@ const convertToVanillaCSS = styles => {
   return values.trim();
 };
 
-const mergeVanillaCSS = (styles, classNames) => {
+const mergeVanillaCSS = (styles: IStyleElementCSSMap[], classNames: IStyle): string => {
   return styles.map(style => {
     if (style.value.length > 0) {
       return style.type === 'hover' ? (`
@@ -37,7 +39,7 @@ const mergeVanillaCSS = (styles, classNames) => {
   }).join('');
 };
 
-export const getStyleElementCSS = (classNames, userStyles) => {
+export const getStyleElementCSS = (classNames: IStyle, userStyles: IUserStylesMap): string => {
   const buttonsHoverValues = convertToVanillaCSS(userStyles.buttonsHoverStyles);
   const buttonsActiveValues = convertToVanillaCSS(userStyles.buttonsActiveStyles);
   const confirmButtonHoverValues = convertToVanillaCSS(userStyles.confirmButtonHoverStyles);

@@ -1,1 +1,1 @@
-{"v":4,"entries":{"dialog--dialog-component":{"type":"story","id":"dialog--dialog-component","name":"Dialog Component","title":"Dialog","importPath":"./src/stories/Dialog.stories.jsx","tags":["story"]}}}
+{"v":4,"entries":{"components--dialog-react":{"type":"story","id":"components--dialog-react","name":"Dialog React","title":"Components","importPath":"./src/stories/Dialog.stories.tsx","tags":["story"]}}}
