@@ -23,9 +23,10 @@ export const Dialog = ({
   confirmButtonClassNames,
   cancelButtonClassNames,
   title,
-  showCloseButton = true,
   confirmButtonText,
   cancelButtonText,
+  showCloseButton = true,
+  closeOnClickOutside = false,
   isConfirmButtonDisabled = false,
   isCancelButtonDisabled = false,
   minWidth,
@@ -73,12 +74,27 @@ export const Dialog = ({
   closeButtonAriaLabel = 'close dialog',
   additionalFooterButtons,
 }: IDialog) => {
-  const dialogRef = useRef < HTMLDialogElement | null > (null);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const innerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (dialogRef && isDialogOpen) dialogRef.current?.showModal();
-    if (dialogRef && !isDialogOpen) dialogRef.current?.close();
-  }, [isDialogOpen, dialogRef]);
+    if (dialogRef.current && isDialogOpen) dialogRef.current.showModal();
+    if (dialogRef.current && !isDialogOpen) dialogRef.current.close();
+  }, [dialogRef, isDialogOpen]);
+
+  useEffect((): void | (() => void) => {
+    if (closeOnClickOutside) {
+      const callback = (event: PointerEvent) => {
+        if (innerRef.current && !innerRef.current.contains(event.target as Node)) {
+          setIsDialogOpen(false);
+        }
+      };
+      document.addEventListener('pointerdown', callback);
+      return () => {
+        document.removeEventListener('pointerdown', callback);
+      };
+    }
+  }, [innerRef]);
 
   const dialogUserStyles = {
     ...dialogStyles,
@@ -175,6 +191,7 @@ export const Dialog = ({
         <style>{styleElementCss}</style>
       )}
       <div
+        ref={innerRef}
         style={innerUserStyles}
         className={`${styles.inner}${innerClassNames
           ? ` ${innerClassNames}` : ''}`}
