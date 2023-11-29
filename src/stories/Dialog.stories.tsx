@@ -75,6 +75,7 @@ const DialogWithHooks = () => {
         closeButtonAction={handleCloseButton}
         confirmButtonAction={handleConfirmButton}
         cancelButtonAction={handleCancelButton}
+        // closeOnClickOutside={true}
         isConfirmButtonDisabled={isConfirmButtonDisabled}
         isCancelButtonDisabled={isCancelButtonDisabled}
         // dialogClassNames="some-class-name"

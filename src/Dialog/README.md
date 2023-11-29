@@ -1,5 +1,5 @@
-#### Supports TS now.
-#### Some minor features coming soon...
+#### See the simple commonly used variant on [GitHub Pages](https://said-fd.github.io/react-dialog).
+#### CodePen playground is [here](https://codepen.io/frontendmax/pen/LYqBPwj).
 
 The main idea behind this component is to use all the benefits of the native `<dialog />` element.\
 With no effort and zero dependencies, we can get a lot of stuff right from the box.
@@ -18,8 +18,6 @@ Actually, you don't need any third-party components to create a nice, accessible
 
 Anyway, here is the `<Dialog />` component if you think that you need one `:D`\
 It has simple default styling with two color themes and controls but you can customize it to fit your needs and design.
-
-See the most commonly used variant on [GitHub Pages](https://said-fd.github.io/react-dialog).
 
 Simplest example:
 ```js
@@ -79,7 +77,7 @@ Property name               | Description                         | Type        
 **isCancelButtonDisabled**  | Disables the button                 | `boolean`             | `false`
 **confirmButtonAriaLabel**  | Handy if button content has no text | `string`              | None
 **cancelButtonAriaLabel**   | Handy if button content has no text | `string`              | None
-**closeButtonAriaLabel**    | Handy if button content has no text | `string`              | `close dialog`
+**closeButtonAriaLabel**    | Handy if button content has no text | `string`              | `'close dialog'`
 
 <br>If these controls are not enough you can add your own into the same dialog footer space.\
 Additional elements will be rendered to the left side of the predefined buttons.\
@@ -103,7 +101,7 @@ Property name          | Description                             | Type     | De
 <br>Footer `align-items` value defaults to `stretch`, you could change it passing a CSS rule to the `footerStyles` object but we'll get to it a bit later.
 
 There are two more actions available, it's possible to add custom handlers on Esc key and dialog close events.\
-On Esc key press dialog will close but you can perform what you need when key-press fires.\
+On Esc key press dialog will close but you can perform what you need when key-down fires.\
 Also, you can fullfil your handler on dialog close which fires on any variant of closing.
 
 #### Dialog closing actions (each of type `() => void`, no defaults):
@@ -111,6 +109,15 @@ Property name         | Description
 ----------------------|-------------------------------------
 **escKeyAction**      | Handles Esc `onKeyDown` event       
 **dialogCloseAction** | Handles `<dialog />` `onClose` event
+
+<br>If your dialog should close on overlay click, there is a `closeOnClickOutside` flag.\
+Pay attention please, that this option will work incorrectly if you need to open another dialog right from inside the opened one without closing it (I have no idea why would you need to do this `:]`).\
+`dialogCloseAction` will be triggered on this closing variant as well.
+
+#### Close on overlay click:
+Property name           | Description                    | Type      | Default value
+------------------------|--------------------------------|-----------|--------------
+**closeOnClickOutside** | Closes dialog on overlay click | `boolean` | `false`
 
 <br>To switch between the two color themes just change a `theme` value.
 

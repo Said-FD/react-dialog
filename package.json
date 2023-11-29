@@ -1,6 +1,6 @@
 {
   "name": "@feeng/react-dialog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Native HTML dialog as an accessible React component. Playground",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -13,11 +13,11 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "storybook dev -p 6006",
+    "start": "storybook dev -p 6006",
     "build": "storybook build"
   },
   "dependencies": {
-    "@feeng/react-dialog": "^0.0.12"
+    "@feeng/react-dialog": "^0.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

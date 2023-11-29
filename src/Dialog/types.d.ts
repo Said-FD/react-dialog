@@ -39,9 +39,10 @@ export type IDialog = {
   confirmButtonClassNames?: string;
   cancelButtonClassNames?: string;
   title?: string | ReactNode;
-  showCloseButton?: boolean;
   confirmButtonText?: string | ReactNode;
   cancelButtonText?: string | ReactNode;
+  showCloseButton?: boolean;
+  closeOnClickOutside?: boolean;
   isConfirmButtonDisabled?: boolean;
   isCancelButtonDisabled?: boolean;
   minWidth?: string;
