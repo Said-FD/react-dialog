@@ -1,4 +1,6 @@
-## This project is bootstrapped with [Storybook](https://storybook.js.org/).
+## Latest vanilla/TS version with zero dependencies can be used as an npm package - [@feeng/react-dialog](https://www.npmjs.com/package/@feeng/react-dialog)
+
+#### This project is bootstrapped with [Storybook](https://storybook.js.org/).
 
 #### To get started run `npm install`.
 
